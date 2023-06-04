@@ -9,12 +9,12 @@ export const habits = {
         {
             habit: 'Correr',
             icon: atvFisica,
-            daysDone: ['Sunday', 'Tuesday']
+            doneDays: ['Domingo', 'Terça']
         },
         {
             habit: 'Leitura',
             icon: leitura,
-            daysDone: ['Sunday', 'Monday', 'Tuesday', 'Thursday']
+            doneDays: ['Domingo', 'Segunda', 'Terça', 'Quinta']
         }
     ]
 }
