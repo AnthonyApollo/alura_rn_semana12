@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Home from "../screens/Home";
+import Tasks from "../screens/Tasks";
 import Habits from "../screens/Habits";
 
 import ListIcon from "./assets/list.svg";
@@ -27,7 +27,7 @@ export default function AppRoutes() {
             tabBarActiveTintColor: 'black',
             tabBarInactiveTintColor: '#A7A7A7',
         })}>
-            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Tasks" component={Tasks} />
             <Tab.Screen name="Habits" component={Habits} />
         </Tab.Navigator>
     </NavigationContainer>
