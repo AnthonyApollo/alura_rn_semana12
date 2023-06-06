@@ -4,9 +4,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { tabs } from "./tabs";
 
-import ListIcon from "./assets/list.svg";
-import HeatLine from "./assets/heartline.svg"
-
 export default function AppRoutes() {
     const Tab = createBottomTabNavigator();
 
@@ -15,12 +12,13 @@ export default function AppRoutes() {
             headerShown: false,
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => {
-                let Icon = ListIcon
+                // let Icon = ListIcon
 
-                if (route.name === 'Habits') {
-                    Icon = HeatLine
-                }
+                // if (route.name === 'Habits') {
+                //     Icon = HeartLine
+                // }
 
+                let Icon = Object.entries(tabs).find(element => element[0] === route.name)[1].icon
                 return <Icon color={color} />
             },
             tabBarActiveTintColor: 'black',

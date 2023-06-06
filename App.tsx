@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import AppRoutes from './src/routes/AppRoutes';
+import AppRoutes from './src/routes';
 
 function App(): JSX.Element {
   return (
