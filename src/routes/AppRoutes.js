@@ -2,8 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Tasks from "../screens/Tasks";
-import Habits from "../screens/Habits";
+import { tabs } from "./tabs";
 
 import ListIcon from "./assets/list.svg";
 import HeatLine from "./assets/heartline.svg"
@@ -27,8 +26,13 @@ export default function AppRoutes() {
             tabBarActiveTintColor: 'black',
             tabBarInactiveTintColor: '#A7A7A7',
         })}>
-            <Tab.Screen name="Tasks" component={Tasks} />
-            <Tab.Screen name="Habits" component={Habits} />
+            {Object.entries(tabs).map(([name, { component }]) => (
+                <Tab.Screen
+                    key={name}
+                    name={name}
+                    component={component}
+                />
+            ))}
         </Tab.Navigator>
     </NavigationContainer>
 }
