@@ -1,12 +1,19 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import Day from "./Day";
 
 export default function Habit({ habit, icon, doneDays }) {
-    const count = useMemo(
-        () => percentageOfDays(doneDays.length),
-        [doneDays]
-    )
+    const [percentage, setPercentage] = useState(0)
+    const [selectedDays, setSelectedDays] = useState(doneDays.length)
+
+    const handleSelection = (selected) => {
+        const selectedCount = selected ? selectedDays + 1 : selectedDays - 1
+        setSelectedDays(selectedCount)
+    }
+
+    useEffect(() => {
+        setPercentage(percentageOfDays(selectedDays))
+    }, [selectedDays])
 
     return <View style={styles.content}>
         <View style={styles.info}>
@@ -14,13 +21,15 @@ export default function Habit({ habit, icon, doneDays }) {
                 <Image source={icon} />
                 <Text style={styles.title}>{habit}</Text>
             </View>
-            <Text style={styles.counter}>{`${count}%`}</Text>
+            <Text style={styles.counter}>{`${percentage}%`}</Text>
         </View>
         <View style={styles.row}>
-            {weekDays.map((day) => {
+            {weekDays.map((day, index) => {
                 return <Day
+                    key={index}
                     letter={day.charAt(0)}
                     isDone={doneDays.includes(day)}
+                    updateCounter={handleSelection}
                 />
             })}
         </View>

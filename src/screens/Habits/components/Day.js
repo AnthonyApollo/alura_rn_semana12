@@ -1,10 +1,22 @@
-import React from "react";
-import { StyleSheet, Text } from "react-native";
+import React, { useState, memo } from "react";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-export default function Day({letter, isDone}) {
-    return <Text style={[styles.content, isDone ? styles.done : styles.undone]}>
-        {letter}
-    </Text>
+export default function Day({ letter, isDone, updateCounter }) {
+    const [isSelected, setIsSelected] = useState(isDone)
+
+    const handlePress = () => {
+        updateCounter(!isSelected)
+        setIsSelected(!isSelected)
+    }
+
+    return <TouchableOpacity 
+        style={[styles.content, isSelected ? styles.done : styles.undone]}
+        onPress={handlePress}
+    >
+        <Text>
+            {letter}
+        </Text>
+    </TouchableOpacity>
 }
 
 const styles = StyleSheet.create({
