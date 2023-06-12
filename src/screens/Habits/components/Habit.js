@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import Day from "./Day";
 
+import { weekDays } from "../../../common/constants";
+
 export default function Habit({ habit, icon, doneDays }) {
     const [percentage, setPercentage] = useState(0)
     const [selectedDays, setSelectedDays] = useState(doneDays.length)
@@ -39,16 +41,6 @@ export default function Habit({ habit, icon, doneDays }) {
 const percentageOfDays = (days) => {
     return Math.floor((days / weekDays.length) * 100);
 }
-
-const weekDays = [
-    "Domingo",
-    "Segunda",
-    "Terça",
-    "Quarta",
-    "Quinta",
-    "Sexta",
-    "Sábado"
-]
 
 const styles = StyleSheet.create({
     content: {
