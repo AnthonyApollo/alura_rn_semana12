@@ -14,13 +14,14 @@ Este projeto tem como objetivo permitir que os alunos apliquem os conhecimentos 
 
 O projeto consiste no desenvolvimento de um aplicativo utilizando o framework React Native. Durante a semana 12 do programa Alura Level Up - Stefanini, os alunos tiveram a oportunidade de aplicar os conceitos aprendidos nos cursos mencionados acima para criar um app funcional.
 
-## Funcionalidades
+## Conteúdo
 
-O aplicativo possui as seguintes funcionalidades:
+O aplicativo exercita as seguintes capacidades:
 
-1. Tela inicial com um menu que permite navegar entre diferentes telas.
-2. Utilização de Hooks para gerenciar o estado e a lógica do aplicativo.
-3. Criação de telas adicionais que exibem informações e interagem com o usuário.
+1. Criação de componentes e estilização com `StyleSheet`
+2. Implementação de listas utilizando `FlatList`.
+3. Utilização de Hooks para gerenciar o estado e a lógica do aplicativo.
+4. Navegação entre telas com a biblioteca [React Navigation](https://reactnavigation.org/).
 
 ## Como executar o projeto
 
